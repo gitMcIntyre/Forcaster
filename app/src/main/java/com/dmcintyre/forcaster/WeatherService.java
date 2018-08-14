@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
+/**
+ * Remote weather service implementation.
+ */
 public class WeatherService extends Service {
 
     private void log(String message){

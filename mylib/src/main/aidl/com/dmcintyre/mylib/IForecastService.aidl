@@ -7,8 +7,6 @@ import com.dmcintyre.mylib.IForecastListener;
 // A ForcastService provides weather information
 interface IForecastService {
 
-    Forecast getForecast();
-
     oneway void getForcastAsync(IForecastListener listener);
 
     void exit();

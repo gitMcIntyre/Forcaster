@@ -37,13 +37,6 @@ public class WeatherServiceImpl extends IForecastService.Stub {
     }
 
     @Override
-    public Forecast getForecast() throws RemoteException {
-        int temp = new Random().nextInt(10);
-        Forecast f = new Forecast(new Long(temp).toString());
-        return f;
-    }
-
-    @Override
     public void getForcastAsync(IForecastListener listener) throws RemoteException {
         service = retrofit.create(IDarkSky.class);
 
@@ -70,7 +63,7 @@ public class WeatherServiceImpl extends IForecastService.Stub {
             @Override
             public void onFailure(Call<Forecast> call, Throwable t) {
                 android.os.Debug.waitForDebugger();
-                Log.e("PdoApplication", "Error getting forecast!");
+                Log.e("Forecaster", "Error getting forecast!");
             }
         });
 
